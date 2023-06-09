@@ -1,4 +1,4 @@
-# CHESS-GAME-Projectsz
+# CHESS-GAME-Project
 ### Checklist
 - [ ] Python and Django
 - [ ] SQL
