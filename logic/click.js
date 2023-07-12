@@ -19,9 +19,7 @@ for (const x of allsquare){
         }
        
 
-        if (innerHTMLofElement.includes('black') || 
-        innerHTMLofElement.includes('white'))
-        {
+        if (innerHTMLofElement.includes('black') || innerHTMLofElement.includes('white')){
             document.getElementById(idofElement).style.backgroundColor = "#f78f3f";
             clickedElements.push(x);
         }
