@@ -6,6 +6,9 @@
     display: grid;
     grid-template-columns: 1fr 5fr;
 }
+body{
+    background-color: #000000;
+}
 .madhya-left{
     background-color: #008B8B;
 }
