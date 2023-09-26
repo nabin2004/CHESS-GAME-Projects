@@ -3,168 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRANDMASTER's CAVE</title>
+    <title>Grandmaster</title>
     <link rel="stylesheet" href="chess.css">
-    <script defer src="./logic/mapping.js"></script>
-    <script defer src="./logic/click.js"></script>
-    <script defer src="./logic/pawn_rules.js"></script>
-
 </head>
 <body>
-     <div class="dad-container">
-        <div class="main-container">
-<div class="file-a files">
-    <div class="square">
-        <img src="./images/pieces/black/rook.png" alt="" />
+<div class="chess">
+<div class="main_container">
+<!--File is a column in chess and chess player call column as FILE-->
+<!-- This is file A -->
+    <div class="file-a files">
+        <div class="square"><img src="./images/pieces/black/rook.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/black/pawn.png" alt="" /></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"><img src="./images/pieces/white/pawn.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/white/rook.png" alt="" /></div>
     </div>
-    <div class="square">
-        <img src="./images/pieces/black/pawn.png" alt="" />
+<!--File is a column in chess and chess player call column as FILE-->
+<!-- This is file B -->
+    <div class="file-b files">
+        <div class="square"><img src="./images/pieces/black/knight.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/black/pawn.png" alt="" /></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"><img src="./images/pieces/white/pawn.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/white/knight.png" alt="" /></div>
     </div>
-    <div class="square">
-        
-    </div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square">
-        <img src="./images/pieces/white/pawn.png" alt="" />
-    </div>
-    <div class="square"><img src="./images/pieces/white/rook.png" alt="" /></div>
-</div>
 
-<div class="file-b files">
-    <div class="square">
-        <img src="./images/pieces/black/knight.png" alt="" />
+<!--File is a column in chess and chess player call column as FILE-->
+<!-- This is file C -->
+    <div class="file-c files">
+        <div class="square"><img src="./images/pieces/black/bishop.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/black/pawn.png" alt="" /></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"><img src="./images/pieces/white/pawn.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/white/bishop.png" alt="" /></div>
     </div>
-    <div class="square">
-        <img src="./images/pieces/black/pawn.png" alt="" />
-    </div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square">
-        <img src="./images/pieces/white/pawn.png" alt="" />
-    </div>
-    <div class="square">
-        <img src="./images/pieces/white/knight.png" alt="" />
-    </div>
-</div>
 
-<div class="file-c files">
-    <div class="square">
-        <img src="./images/pieces/black/bishop.png" alt="" />
-    </div>
-    <div class="square">
-        <img src="./images/pieces/black/pawn.png" alt="" />
-    </div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square">
-        <img src="./images/pieces/white/pawn.png" alt="" />
-    </div>
-    <div class="square">
-        <img src="./images/pieces/white/bishop.png" alt="" />
-    </div>
-</div>
+<!--File is a column in chess and chess player call column as FILE-->
+<!-- This is file D -->
 
-<div class="file-d files">
-    <div class="square">
-        <img src="./images/pieces/black/queen.png" alt="" />
+    <div class="file-d files">
+        <div class="square"><img src="./images/pieces/black/queen.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/black/pawn.png" alt="" /></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"><img src="./images/pieces/white/pawn.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/white/queen.png" alt="" /></div>
     </div>
-    <div class="square">
-        <img src="./images/pieces/black/pawn.png" alt="" />
-    </div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square">
-        <img src="./images/pieces/white/pawn.png" alt="" />
-    </div>
-    <div class="square">
-        <img src="./images/pieces/white/queen.png" alt="" />
-    </div>
-</div>
 
-<div class="file-e files">
-    <div class="square">
-        <img src="./images/pieces/black/king.png" alt="" />
-    </div>
-    <div class="square">
-        <img src="./images/pieces/black/pawn.png" alt="" />
-    </div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square">
-        <img src="./images/pieces/white/pawn.png" alt="" />
-    </div>
-    <div class="square">
-        <img src="./images/pieces/white/king.png" alt="" />
-    </div>
-</div>
 
-<div class="file-f files">
-    <div class="square">
-        <img src="./images/pieces/black/bishop.png" alt="" />
+<!--File is a column in chess and chess player call column as FILE-->
+<!-- This is file E -->
+    <div class="file-e files">
+        <div class="square"><img src="./images/pieces/black/king.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/black/pawn.png" alt="" /></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"><img src="./images/pieces/white/pawn.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/white/king.png" alt="" /></div>
     </div>
-    <div class="square">
-        <img src="./images/pieces/black/pawn.png" alt="" />
-    </div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square">
-        <img src="./images/pieces/white/pawn.png" alt="" />
-    </div>
-    <div class="square">
-        <img src="./images/pieces/white/bishop.png" alt="" />
-    </div>
-</div>
 
-<div class="file-g files">
-    <div class="square">
-        <img src="./images/pieces/black/knight.png" alt="" />
-    </div>
-    <div class="square">
-        <img src="./images/pieces/black/pawn.png" alt="" />
-    </div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square">
-        <img src="./images/pieces/white/pawn.png" alt="" />
-    </div>
-    <div class="square">
-        <img src="./images/pieces/white/knight.png" alt="" />
-    </div>
-</div>
 
-<div class="file-h files">
-    <div class="square">
-        <img src="./images/pieces/black/rook.png" alt="" />
+<!--File is a column in chess and chess player call column as FILE-->
+<!-- This is file F -->
+    <div class="file-f files">
+        <div class="square"><img src="./images/pieces/black/bishop.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/black/pawn.png" alt="" /></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"><img src="./images/pieces/white/pawn.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/white/bishop.png" alt="" /></div>
     </div>
-    <div class="square">
-        <img src="./images/pieces/black/pawn.png" alt="" />
+
+
+<!--File is a column in chess and chess player call column as FILE-->
+<!-- This is file g -->
+    <div class="file-g files">
+        <div class="square"><img src="./images/pieces/black/knight.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/black/pawn.png" alt="" /></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"><img src="./images/pieces/white/pawn.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/white/knight.png" alt="" /></div>
     </div>
-    <div class="square">
-        
+
+
+<!--File is a column in chess and chess player call column as FILE-->
+<!-- This is file h -->
+    <div class="file-h files">
+        <div class="square"><img src="./images/pieces/black/rook.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/black/pawn.png" alt="" /></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"><img src="./images/pieces/white/pawn.png" alt="" /></div>
+        <div class="square"><img src="./images/pieces/white/rook.png" alt="" /></div>
     </div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square">
-        <img src="./images/pieces/white/pawn.png" alt="" />
-    </div>
-    <div class="square"><img src="./images/pieces/white/rook.png" alt="" /></div>
+
+
+
+
+
+
 </div>
-</div></div>
+</div>
 
 
 </body>
