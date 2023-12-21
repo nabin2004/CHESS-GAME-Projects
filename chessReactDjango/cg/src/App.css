@@ -7,10 +7,6 @@ background-color: #FCEAC7; */
   height:70px;
 }
 
-body{
-  background-color:	#000;
-}
-
 .main_container{
   display: grid;
   grid-template-columns: repeat(8,1fr);
