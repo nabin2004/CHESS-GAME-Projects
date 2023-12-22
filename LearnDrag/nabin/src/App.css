@@ -1,0 +1,49 @@
+.b {
+  background-color: black;
+}
+
+.a {
+  background-color: bisque;
+}
+
+.App{
+  display: flex;
+  justify-content: center;
+}
+
+.square {
+  width: 70px;
+  height: 70px;
+  background-color: bisque; 
+  margin: 5px; 
+}
+
+img{
+  width: 100%;
+}
+
+.bbb{
+  background-color: black;
+}
+
+.rook{
+  cursor: pointer;
+}
+
+.hold{
+  background-color: yellow;
+}
+
+.hide{
+  display: none;
+}
+
+.Station{
+  width: 600px;
+  height: 400px;
+  background-color:brown;
+}
+
+.Station .rook {
+  width: 10%;
+}

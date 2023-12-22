@@ -34,3 +34,11 @@ background-color: #FCEAC7; */
 img{
   width: 100%;
 }
+
+.rook{
+  background-image: url('/public/images/pieces/black/rook.png');
+  position: relative;
+  width: 70px;
+  height:70px;
+  cursor: pointer;
+}

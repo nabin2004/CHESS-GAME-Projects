@@ -4,14 +4,26 @@ import React from 'react';
 import './App.css';
 
 function Chess() {
+  
+  const handleStart = (e) => {
+      console.log('Start Drag')
+  }
+
+  const handleEnd = (e) => {
+    console.log('Drag End')
+  }
+
+  const handleOver = (e) => {
+    console.log('Over')
+  }
   return (
     <div className='chess'>
     <div className="main_container">
       {/* File is a column in chess, and chess players call a column as FILE */}
       {/* This is file A */}
       <div className="file-a files">
-        <div className="square a11"><img src="./images/pieces/black/rook.png" alt="" /></div>
-        <div className="square a12"><img src="./images/pieces/black/pawn.png" alt="" /></div>
+        <div className="square a11 roo"><img src="./images/pieces/black/rook.png" alt="" onDragOver={handleOver} onDragStart={handleStart} onDragEnd={handleEnd}/></div>
+        <div className="square a12"><img src="./images/pieces/black/pawn.png" alt="" onDragOver={handleOver} onDragStart={handleStart} onDragEnd={handleEnd}/></div>
         <div className="square a13"></div>
         <div className="square a14"></div>
         <div className="square a15"></div>
