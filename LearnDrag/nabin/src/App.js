@@ -9,14 +9,14 @@ function App() {
   };
 
   const handleDragOver = (e, square) => {
-    e.preventDefault(); // Prevent default behavior to enable drop
+    e.preventDefault(); 
     console.log('Drag Over detected');
     setCurrentSquare(square);
   };
 
   const renderRook = (square) => (
     <img
-      src="./path/rook.png"
+      src="./images/pieces/white/rook.png"
       alt="rook"
       draggable='true'
       className='rook'
@@ -27,7 +27,7 @@ function App() {
 
   const renderSquares = (file) => {
     const squares = [];
-    for (let i = 11; i <= 19; i++) {
+    for (let i = 11; i <= 18; i++) {
       const square = `${file}${i}`;
       squares.push(
         <div key={square} className={`square ${square}`} onDragOver={(e) => handleDragOver(e, square)}>
@@ -40,15 +40,30 @@ function App() {
 
   return (
     <div className='App'>
-      <div className="file-a files">
-        {renderSquares('a')}
-      </div>
-
-      <div className="file-b files">
-        {renderSquares('b')}
-      </div>
-
-      {/* Add similar blocks for other files if needed */}
+<div className="file-a files">
+  {renderSquares('a')}
+</div> 
+<div className="file-b files">
+  {renderSquares('b')}
+</div> 
+<div className="file-c files">
+  {renderSquares('c')}
+</div> 
+<div className="file-d files">
+  {renderSquares('d')}
+</div> 
+<div className="file-e files">
+  {renderSquares('e')}
+</div>
+<div className="file-f files">
+  {renderSquares('f')}
+</div>
+<div className="file-g files">
+  {renderSquares('g')}
+</div>
+<div className="file-h files">
+  {renderSquares('h')}
+</div>
 
     </div>
   );
