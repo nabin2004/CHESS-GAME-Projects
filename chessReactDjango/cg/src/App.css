@@ -7,6 +7,8 @@ background-color: #FCEAC7; */
   height:70px;
 }
 
+
+
 .main_container{
   display: grid;
   grid-template-columns: repeat(8,1fr);
@@ -35,10 +37,109 @@ img{
   width: 100%;
 }
 
-.rook{
+.Brook{
   background-image: url('/public/images/pieces/black/rook.png');
+  background-size: cover;
   position: relative;
-  width: 70px;
-  height:70px;
+  width:100%;
   cursor: pointer;
 }
+
+.Wrook{
+  background-image: url('/public/images/pieces/white/rook.png');
+  background-size: cover;
+  position: relative;
+  width:100%;
+  cursor: pointer;
+}
+
+.Bpawn{
+  background-image: url('/public/images/pieces/black/pawn.png');
+  background-size: cover;
+  position: relative;
+  width:100%;
+  cursor: pointer;
+}
+
+.Wpawn{
+  background-image: url('/public/images/pieces/white/pawn.png');
+  background-size: cover;
+  position: relative;
+  width:100%;
+  cursor: pointer;
+}
+
+.Wknight{
+  background-image: url("/public/images/pieces/white/knight.png");
+  background-size: cover;
+  position: relative;
+  width:100%;
+  cursor: pointer;
+}
+
+.Bknight{
+  background-image: url("/public/images/pieces/black/knight.png");
+  background-size: cover;
+  position: relative;
+  width:100%;
+  cursor: pointer;
+}
+
+.Bbishop{
+  background-image: url("/public/images/pieces/black/bishop.png");
+  background-size: cover;
+  position: relative;
+  width:100%;
+  cursor: pointer;
+}
+
+.Wbishop{
+  background-image: url("/public/images/pieces/white/bishop.png");
+  background-size: cover;
+  position: relative;
+  width:100%;
+  cursor: pointer;
+}
+
+.Wking{
+  background-image: url("/public/images/pieces/white/king.png");
+  background-size: cover;
+  position: relative;
+  width:100%;
+  cursor: pointer;
+}
+.Bking{
+  background-image: url("/public/images/pieces/black/king.png");
+  background-size: cover;
+  position: relative;
+  width:100%;
+  cursor: pointer;
+}
+
+.Bqueen{
+  background-image: url("/public/images/pieces/black/queen.png");
+  background-size: cover;
+  position: relative;
+  width:100%;
+  cursor: pointer;
+}
+
+
+
+.Wqueen{
+  background-image: url("/public/images/pieces/white/queen.png");
+  background-size: cover;
+  position: relative;
+  width:100%;
+  cursor: pointer;
+}
+
+.App{
+  display: flex;
+  justify-content: center;
+}
+
+#Sqclicked{
+  background-color: yellow;
+}
+

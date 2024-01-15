@@ -1,72 +1,72 @@
 import React, { useState } from 'react';
-import './App.css';
 
-function App() {
-  const [currentSquare, setCurrentSquare] = useState('a11');
+const initialChessboard = [
+  ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'],
+  ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
+  Array(8).fill(null),
+  Array(8).fill(null),
+  Array(8).fill(null),
+  Array(8).fill(null),
+  ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
+  ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'],
+];
 
-  const handleDragEnd = () => {
-    console.log('Dragend triggered');
-  };
+const ChessGame = () => {
+  const [chessboard, setChessboard] = useState(initialChessboard);
+  const [selectedPiece, setSelectedPiece] = useState(null);
 
-  const handleDragOver = (e, square) => {
-    e.preventDefault(); 
-    console.log('Drag Over detected');
-    setCurrentSquare(square);
-  };
+  const handleSquareClick = (row, col) => {
+    const clickedPiece = chessboard[row][col];
 
-  const renderRook = (square) => (
-    <img
-      src="./images/pieces/white/rook.png"
-      alt="rook"
-      draggable='true'
-      className='rook'
-      onDragEnd={handleDragEnd}
-      style={{ visibility: currentSquare === square ? 'visible' : 'hidden' }}
-    />
-  );
+    if (!selectedPiece && clickedPiece) {
+      // Select the piece
+      setSelectedPiece({ type: clickedPiece, row, col });
+    } else if (selectedPiece) {
+      // Move the piece if the move is valid
+      if (isValidMove(selectedPiece, row, col)) {
+        movePiece(selectedPiece, row, col);
+      }
 
-  const renderSquares = (file) => {
-    const squares = [];
-    for (let i = 11; i <= 18; i++) {
-      const square = `${file}${i}`;
-      squares.push(
-        <div key={square} className={`square ${square}`} onDragOver={(e) => handleDragOver(e, square)}>
-          {renderRook(square)}
-        </div>
-      );
+      // Deselect the piece
+      setSelectedPiece(null);
     }
-    return squares;
+  };
+
+  const isValidMove = (piece, toRow, toCol) => {
+    // Implement move validation logic based on piece type (e.g., pawn, rook)
+    // For simplicity, let's assume all moves are valid for now
+    return true;
+  };
+
+  const movePiece = (piece, toRow, toCol) => {
+    const newChessboard = [...chessboard];
+    newChessboard[toRow][toCol] = piece.type;
+    newChessboard[piece.row][piece.col] = null;
+    setChessboard(newChessboard);
+  };
+
+  const renderChessboard = () => {
+    return chessboard.map((row, rowIndex) => (
+      <div key={rowIndex} className="chessboard-row">
+        {row.map((piece, colIndex) => (
+          <div
+            key={colIndex}
+            className="chessboard-square"
+            onClick={() => handleSquareClick(rowIndex, colIndex)}
+          >
+            {piece && <div className="chess-piece">{piece}</div>}
+          </div>
+        ))}
+      </div>
+    ));
   };
 
   return (
-    <div className='App'>
-<div className="file-a files">
-  {renderSquares('a')}
-</div> 
-<div className="file-b files">
-  {renderSquares('b')}
-</div> 
-<div className="file-c files">
-  {renderSquares('c')}
-</div> 
-<div className="file-d files">
-  {renderSquares('d')}
-</div> 
-<div className="file-e files">
-  {renderSquares('e')}
-</div>
-<div className="file-f files">
-  {renderSquares('f')}
-</div>
-<div className="file-g files">
-  {renderSquares('g')}
-</div>
-<div className="file-h files">
-  {renderSquares('h')}
-</div>
-
+    <div className="chess-game">
+      <h1>React Chess Game</h1>
+      {renderChessboard()}
     </div>
   );
-}
+};
 
-export default App;
+export default ChessGame;
