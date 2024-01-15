@@ -6,7 +6,6 @@ import './App.css';
 let swap = []
 
 function Chess() {
-  const [clickedSquareId, setClickedSquareId] = useState(null);
   const [firstClick, setFirstClick] = useState(null);
   
   const handleClick = (e) => {
@@ -14,14 +13,32 @@ function Chess() {
     const currentClassName = e.target.className;
     if (!firstClick){
       console.log('Click1')
+      const clickedClassName = e.target.className;
+      // Set 'Sqclicked' as the new ID for the clicked square
+      const classes = clickedClassName.split(' ');
+      const numberOfClasses = classes.length;
+  
+      if (numberOfClasses > 2) {
+        e.target.id = 'Sqclicked';
+      }
       
       swap.push(currentClassName)
       setFirstClick(currentClassName)
     }else{
       console.log('click2')
-      
+      const previousClickedElement = document.getElementById('Sqclicked');
+    if (previousClickedElement) {
+      previousClickedElement.id = ''; 
+    }
+    const clickedClassName = e.target.className;
+    // Set 'Sqclicked' as the new ID for the clicked square
+    const classes = clickedClassName.split(' ');
+    const numberOfClasses = classes.length;
+
+    if (numberOfClasses > 2) {
+      e.target.id = 'Sqclicked';
+    }
       swap.push(currentClassName)
-      setClickedSquareId(e.target.id);
       console.log(swap[swap.length - 2])
       let pieceClass = swap[swap.length - 2]
       console.log(pieceClass)
@@ -31,22 +48,6 @@ function Chess() {
       var lastElement = document.getElementsByClassName(swap[swap.length - 1])[0];
       secondElement.classList.remove(pieceName)
       lastElement.classList.add(pieceName)
-    }
-
-    if (clickedSquareId !== null) {
-      const previousClickedElement = document.getElementById(clickedSquareId);
-      if (previousClickedElement) {
-        previousClickedElement.id = '';
-      }
-    }
-    const clickedClassName = e.target.className;
-    
-    // Set 'Sqclicked' as the new ID for the clicked square
-    const classes = clickedClassName.split(' ');
-    const numberOfClasses = classes.length;
-
-    if (numberOfClasses > 2) {
-      // e.target.id = 'Sqclicked';
     }
   };
 
