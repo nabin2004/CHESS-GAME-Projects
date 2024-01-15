@@ -3,11 +3,35 @@
 import React, { useState } from 'react';
 import './App.css';
 
+let swap = []
+
 function Chess() {
   const [clickedSquareId, setClickedSquareId] = useState(null);
-
+  const [firstClick, setFirstClick] = useState(null);
+  
   const handleClick = (e) => {
     console.log('Clicked');
+    const currentClassName = e.target.className;
+    if (!firstClick){
+      console.log('Click1')
+      
+      swap.push(currentClassName)
+      setFirstClick(currentClassName)
+    }else{
+      console.log('click2')
+      
+      swap.push(currentClassName)
+      setClickedSquareId(e.target.id);
+      console.log(swap[swap.length - 2])
+      let pieceClass = swap[swap.length - 2]
+      console.log(pieceClass)
+      let cleanPieceName = pieceClass.split(' ')
+      let pieceName = cleanPieceName[2]
+      var secondElement = document.getElementsByClassName(swap[swap.length - 2])[0];
+      var lastElement = document.getElementsByClassName(swap[swap.length - 1])[0];
+      secondElement.classList.remove(pieceName)
+      lastElement.classList.add(pieceName)
+    }
 
     if (clickedSquareId !== null) {
       const previousClickedElement = document.getElementById(clickedSquareId);
@@ -15,19 +39,15 @@ function Chess() {
         previousClickedElement.id = '';
       }
     }
-
     const clickedClassName = e.target.className;
-    console.log(clickedClassName);
-
+    
     // Set 'Sqclicked' as the new ID for the clicked square
     const classes = clickedClassName.split(' ');
     const numberOfClasses = classes.length;
 
     if (numberOfClasses > 2) {
-      e.target.id = 'Sqclicked';
-      setClickedSquareId(e.target.id);
+      // e.target.id = 'Sqclicked';
     }
-    
   };
 
   const handleStart = (e) => {
@@ -52,7 +72,6 @@ function Chess() {
     <div className="main_container">
       {/* File is a column in chess, and chess players call a column as FILE */}
       {/* This is file A */}
-      {/* <img src="./images/pieces/black/rook.png" alt="" onDragOver={handleOver} onDragStart={handleStart} onDragEnd={handleEnd}/> */}
       <div className="file-a files">
         <div className="square a11 Brook" onClick={(e) => handleClick(e)} onDragOver={handleOver} onDragStart={handleStart} onDragEnd={handleEnd}/>
         <div className="square a12 Bpawn" onClick={(e) => handleClick(e)} onDragOver={handleOver} onDragStart={handleStart} onDragEnd={handleEnd}/>
