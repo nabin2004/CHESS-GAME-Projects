@@ -7,7 +7,7 @@ let swap = []
 
 function Chess() {
   const [firstClick, setFirstClick] = useState(null);
-  
+
   const handleClick = (e) => {
     console.log('Clicked');
     const currentClassName = e.target.className;
@@ -21,7 +21,6 @@ function Chess() {
       if (numberOfClasses > 2) {
         e.target.id = 'Sqclicked';
       }
-      
       swap.push(currentClassName)
       setFirstClick(currentClassName)
     }else{
@@ -39,16 +38,24 @@ function Chess() {
       e.target.id = 'Sqclicked';
     }
       swap.push(currentClassName)
-      console.log(swap[swap.length - 2])
       let pieceClass = swap[swap.length - 2]
-      console.log(pieceClass)
       let cleanPieceName = pieceClass.split(' ')
       let pieceName = cleanPieceName[2]
+      
       var secondElement = document.getElementsByClassName(swap[swap.length - 2])[0];
       var lastElement = document.getElementsByClassName(swap[swap.length - 1])[0];
+      
+      // I dont why but found out using console.log that when they have this condition of if they are dead
+      if (lastElement && secondElement) {
+      if((lastElement.classList.length === 3 && secondElement.classList.length === 4) | (lastElement.classList.length === 3 && secondElement.classList.length === 4) ){
+          console.log('Eureka')
+          lastElement.classList.remove(lastElement.classList[lastElement.classList.length-1])   
+      }
+    
       secondElement.classList.remove(pieceName)
+      
       lastElement.classList.add(pieceName)
-    }
+    }}
   };
 
   const handleStart = (e) => {
