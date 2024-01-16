@@ -7,7 +7,6 @@ let swap = []
 
 function Chess() {
   const [firstClick, setFirstClick] = useState(null);
-
   const handleClick = (e) => {
     console.log('Clicked');
     const currentClassName = e.target.className;

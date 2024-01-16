@@ -143,3 +143,77 @@ img{
   background-color: yellow;
 }
 
+
+@media (max-width: 700px) {
+  .square{
+    background-color:#FCEAC7;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .main_container{
+    display: grid;
+    grid-template-columns: repeat(8,0fr);
+    height: 560px;
+    width: 560px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .chess{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+}
+
+
+/* @media (max-width: 700px) {
+  .square{
+    background-color:#FCEAC7;
+    width: 50px;
+    height: 30px;
+  }
+  
+  .main_container{
+    display: grid;
+    grid-template-columns: repeat(8,0fr);
+    height: 560px;
+    width: 560px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .chess{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+} */
+
+@media (max-width: 550px) {
+  .square{
+    background-color:#FCEAC7;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .main_container{
+    display: grid;
+    grid-template-columns: repeat(8,0fr);
+    height: 560px;
+    width: 560px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .chess{
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+}
